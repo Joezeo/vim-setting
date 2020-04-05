@@ -22,11 +22,13 @@
 `Plugin 'altercation/vim-colors-solarized'`  
 `Plugin 'tomasr/molokai'`  
 `Plugin 'vim-scripts/phd'`  
+---
 
 ### Vim 状态栏样式   
 `Plugin 'Lokaltog/vim-powerline'`  
 #### 需要在.vimrc中配置   
 `let g:Powerline_symbols = 'fancy'`
+---
 
 ### C/C++ 语法高亮
 `Plugin 'octol/vim-cpp-enhanced-highlight'`  
@@ -39,11 +41,13 @@ Highlighting of member variables is disabled by default. To enable set
 
 Highlighting of class names in declarations is disabled by default. To enable set
 `let g:cpp_class_decl_highlight = 1`
+---
 
 ### Tab 缩进指示
 Plugin 'nathanaelkane/vim-indent-guides'
 #### 配置.vimrc,使随vim自启动
 `let g:indent_guides_enable_on_vim_startup = 1`
+---
 
 ### C/C++ 头.h方法快速切换至.cpp文件
 `Plugin 'derekwyatt/vim-fswitch'`
@@ -51,12 +55,15 @@ Plugin 'nathanaelkane/vim-indent-guides'
 命令：`;sw` : 接口和实现之间快速切换  
 *.cpp 和 *.h 间切换  
 nmap <silent> <Leader>sw :FSHere<cr>  
+---
 
 ### 设置标签，快速跳转
 `Plugin 'kshenoy/vim-signature'`
+---
 
 ### 书签设置
 `Plugin 'vim-scripts/BOOKMARKS--Mark-and-Highlight-Full-Lines'`
+---
 
 ### 智能选择文本
 `Plugin 'gcmt/wildfire.vim'`
@@ -66,6 +73,7 @@ nmap <silent> <Leader>sw :FSHere<cr>
 `i)` : 选择小括号中的内容  
 `i]` : 选择中括号中的内容
 `i}` : 选择大括号中的内容
+---
 
 ### others...
 
