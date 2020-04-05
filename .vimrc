@@ -17,20 +17,21 @@ Plugin 'majutsushi/tagbar'
 Plugin 'vim-scripts/indexer.tar.gz'
 Plugin 'vim-scripts/DfrankUtil'
 Plugin 'vim-scripts/vimprj'
-"Plugin 'dyng/ctrlsf.vim'
-"Plugin 'terryma/vim-multiple-cursors'
-"Plugin 'scrooloose/nerdcommenter'
-"Plugin 'vim-scripts/DrawIt'
+Plugin 'dense-analysis/ale' "Error checking
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'scrooloose/nerdtree'
+Plugin 'fholgado/minibufexpl.vim'
+Plugin 'gcmt/wildfire.vim'
+Plugin 'sjl/gundo.vim'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'suan/vim-instant-markdown'
 "Plugin 'SirVer/ultisnips'
 "Plugin 'Valloric/YouCompleteMe'
-"Plugin 'derekwyatt/vim-protodef'
-"Plugin 'scrooloose/nerdtree'
-"Plugin 'fholgado/minibufexpl.vim'
-"Plugin 'gcmt/wildfire.vim'
-"Plugin 'sjl/gundo.vim'
-"Plugin 'Lokaltog/vim-easymotion'
-"Plugin 'suan/vim-instant-markdown'
-"Plugin 'lilydjwg/fcitx.vim'
+Plugin 'lilydjwg/fcitx.vim'
+Plugin 'dyng/ctrlsf.vim'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'vim-scripts/DrawIt'
+Plugin 'derekwyatt/vim-protodef'
 " 插件列表结束
 call vundle#end()
 filetype plugin indent on
@@ -122,3 +123,17 @@ nnoremap F <C-f>
 nnoremap W :w<CR>
 nnoremap Q :q<CR>
 map R :source $MYVIMRC<CR>
+
+" NredTree
+autocmd vimenter * NERDTree
+
+" ale 代码检查设置
+let g:ale_sign_column_always=1
+let g:ale_sign_error='>>'
+let g:ale_sign_warning='--'
+
+" ale支持的linter详见https://github.com/dense-analysis/ale/blob/master/supported-tools.md
+let g:ale_linters={
+\    'c':['clang'],
+\    'c++':['clang'],
+\}
