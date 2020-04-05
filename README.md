@@ -71,7 +71,8 @@ nmap <silent> <Leader>sw :FSHere<cr>
 ### 智能选择文本
 ---
 `Plugin 'gcmt/wildfire.vim'`
-进入visual模式后，键入命令：
+进入visual模式后，键入命令：  
+
 `i'` : 选择单引号中的内容  
 `i"` : 选择双引号中的内容  
 `i)` : 选择小括号中的内容  
