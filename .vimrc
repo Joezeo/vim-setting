@@ -39,6 +39,18 @@ filetype plugin indent on
 " 设置快捷键前缀
 let mapleader=";"
 
+" 键盘映射
+imap jj <Esc>
+nnoremap <Space>d <C-d>
+nnoremap <Space>u <C-u>
+nnoremap <Space>b <C-b>
+nnoremap <Space>f <C-f>
+nnoremap B <C-b>
+nnoremap F <C-f>
+nnoremap W :w<CR>
+nnoremap Q :q<CR>
+map R :source $MYVIMRC<CR>
+
 " 一些基础设定
 set nocompatible
 set backspace=indent,eol,start
@@ -82,7 +94,7 @@ set shiftwidth=4
 " 让 vim 把连续数量的空格视为一个制表符
 set softtabstop=4
 
-" 随 vim 自启动
+" vim-intent-guides 随 vim 自启动
 let g:indent_guides_enable_on_vim_startup=1
 " 从第二层开始可视化显示缩进
 let g:indent_guides_start_level=2
@@ -98,7 +110,7 @@ set foldmethod=syntax
 " 启动 vim 时关闭折叠代码
 set nofoldenable
 
-" sw 接口和实现之间快速切换
+" `;sw`命令执行接口和实现之间快速切换
 " *.cpp 和 *.h 间切换
 nmap <silent> <Leader>sw :FSHere<cr>
 
@@ -112,17 +124,16 @@ set fileencodings=utf-8,gbk,utf-16le,cp1252,iso-8859-15,ucs-bom
 set termencoding=utf-8
 set encoding=utf-8
 
-" 键盘映射
-imap jj <Esc>
-nnoremap <Space>d <C-d>
-nnoremap <Space>u <C-u>
-nnoremap <Space>b <C-b>
-nnoremap <Space>f <C-f>
-nnoremap B <C-b>
-nnoremap F <C-f>
-nnoremap W :w<CR>
-nnoremap Q :q<CR>
-map R :source $MYVIMRC<CR>
+" PowerLine设置
+let g:Powerline_symbols='fancy'
+
+" Cpp 语法高亮强化
+" Highlighting of class scope is disabled by default. To enable set
+let g:cpp_class_scope_highlight = 1
+" Highlighting of member variables is disabled by default. To enable set
+let g:cpp_member_variable_highlight = 1
+" Highlighting of class names in declarations is disabled by default. To enable set
+let g:cpp_class_decl_highlight = 1
 
 " NredTree
 autocmd vimenter * NERDTree
