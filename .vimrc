@@ -7,7 +7,10 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'tomasr/molokai'
 Plugin 'vim-scripts/phd'
-Plugin 'Lokaltog/vim-powerline'
+Plugin 'morhetz/gruvbox'
+Plugin 'jnurmine/Zenburn'
+" Plugin 'Lokaltog/vim-powerline' " 此状态栏较为 fancy，个人不喜欢
+Plugin 'vim-airline/vim-airline'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'derekwyatt/vim-fswitch'
@@ -54,7 +57,6 @@ map R :source $MYVIMRC<CR>
 " 一些基础设定
 set nocompatible
 set backspace=indent,eol,start
-filetype plugin on
 set wrap
 set showcmd
 set tabstop=4
@@ -62,9 +64,13 @@ set scrolloff=5
 
 " 配色方案
 set background=dark
+colorscheme gruvbox
 "colorscheme solarized
-colorscheme molokai
+"colorscheme molokai
 "colorscheme phd
+"colorscheme zenburn
+" 设置256色，否则某些样式插件无法生效
+set t_Co=256
 
 " 开启语法高亮功能
 syntax enable
@@ -100,8 +106,8 @@ let g:indent_guides_enable_on_vim_startup=1
 let g:indent_guides_start_level=2
 " 色块宽度
 let g:indent_guides_guide_size=1
-" 快捷键 c 开/关缩进可视化
-:nmap <silent> <Leader>c <Plug>IndentGuidesToggle
+" 快捷键 ;i 开/关缩进可视化
+:nmap <silent> <Leader>i <Plug>IndentGuidesToggle
 
 " 基于缩进或语法进行代码折叠
 " za打开或关闭当前折叠，zM关闭所有折叠，zR打开所有折叠
@@ -125,7 +131,7 @@ set termencoding=utf-8
 set encoding=utf-8
 
 " PowerLine设置
-let g:Powerline_symbols='fancy'
+" let g:Powerline_symbols='fancy'
 
 " Cpp 语法高亮强化
 " Highlighting of class scope is disabled by default. To enable set
@@ -136,14 +142,17 @@ let g:cpp_member_variable_highlight = 1
 let g:cpp_class_decl_highlight = 1
 
 " NredTree
-autocmd vimenter * NERDTree
+" NerdTree 随 Vim 自启动
+" autocmd vimenter * NERDTree
+" Ctrl+n 打开/关闭 NERDTree
+map <C-n> :NERDTreeToggle<CR>
 
 " ale 代码检查设置
 let g:ale_sign_column_always=1
 let g:ale_sign_error='>>'
 let g:ale_sign_warning='--'
 
-" ale支持的linter详见https://github.com/dense-analysis/ale/blob/master/supported-tools.md
+" ale 支持的linter详见https://github.com/dense-analysis/ale/blob/master/supported-tools.md
 let g:ale_linters={
 \    'c':['clang'],
 \    'c++':['clang'],
