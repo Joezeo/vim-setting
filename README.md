@@ -47,7 +47,7 @@
 开启语法高亮功能  
 `syntax enable`  
 允许用指定语法高亮配色方案替换默认方案   
-`syntax on`
+`syntax on`  
 总是显示状态栏  
 `set laststatus=2`  
 显示光标当前位置  
@@ -105,8 +105,15 @@ Highlighting of class names in declarations is disabled by default. To enable se
 ### Tab 缩进指示
 ---
 Plugin 'nathanaelkane/vim-indent-guides'
-#### 配置.vimrc,使随vim自启动
-`let g:indent_guides_enable_on_vim_startup = 1`
+#### 配置.vimrc
+使随 vim 自启动  
+`let g:indent_guides_enable_on_vim_startup = 1`  
+从第二层开始可视化显示缩进  
+`let g:indent_guides_start_level=2`  
+色块宽度  
+`let g:indent_guides_guide_size=1`  
+快捷键 ;i 开/关缩进可视化  
+`:nmap <silent> <Leader>i <Plug>IndentGuidesToggle`  
   
 
 ### C/C++ 头.h方法快速切换至.cpp文件
@@ -141,13 +148,13 @@ Plugin 'nathanaelkane/vim-indent-guides'
 ---
 `Plugin 'dense-analysis/ale'`  
 #### .vimrc 配置
-总是显示异常信息标志列
+总是显示异常信息标志列  
 `let g:ale_sign_column_always=1`  
-设置异常信息标志图形
+设置异常信息标志图形  
 `let g:ale_sign_error='>>'`  
-设置警告信息标志图形
+设置警告信息标志图形  
 `let g:ale_sign_warning='--'`  
-根据语言设置不同的 linter ,ale 支持的linter详见https://github.com/dense-analysis/ale/blob/master/supported-tools.md
+根据语言设置不同的 linter ,ale 支持的linter详见https://github.com/dense-analysis/ale/blob/master/supported-tools.md  
 `let g:ale_linters={  
 \    'c':['clang'],  
 \    'c++':['clang'],  
