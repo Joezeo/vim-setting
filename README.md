@@ -155,10 +155,10 @@ Plugin 'nathanaelkane/vim-indent-guides'
 设置警告信息标志图形  
 `let g:ale_sign_warning='--'`  
 根据语言设置不同的 linter ,ale 支持的linter详见https://github.com/dense-analysis/ale/blob/master/supported-tools.md  
-`let g:ale_linters={  
-\    'c':['clang'],  
-\    'c++':['clang'],  
-\}`  
+`let g:ale_linters={`  
+`\    'c':['clang'],`  
+`\    'c++':['clang'],`  
+`\}`    
 
 ### 文件列表，NERDTree
 ---
