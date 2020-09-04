@@ -1,0 +1,20 @@
+set cursorline
+set showcmd
+set scrolloff=5
+
+" Quit insert mode
+inoremap jj <Esc>
+nnoremap W :w<CR>
+nnoremap Q :q<CR>
+map R :source $MYVIMRC<CR>
+
+" Tab operation
+nnoremap fk gt
+nnoremap fj gT
+
+" Move half page faster
+nnoremap <Space>d <C-d>
+nnoremap <Space>u <C-u>
+nnoremap <Space>b <C-b>
+nnoremap <Space>f <C-f>
+set ideajoin
